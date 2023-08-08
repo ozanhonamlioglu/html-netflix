@@ -8,8 +8,8 @@
     <script src="https://kit.fontawesome.com/e8c66205b2.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <main class="h-screen overflow-y-auto bg-gray-800">
-      <nav class="w-screen flex p-5 px-10 bg-opacity-80 bg-gradient-to-b from-black fixed z-10">
+    <main class="h-screen w-screen overflow-y-auto bg-gray-800">
+      <nav class="w-full flex p-5 px-10 bg-opacity-80 bg-gradient-to-b from-black fixed z-10">
         <div class="flex flex-auto space-x-3 sm:space-x-9">
           <div class="flex-none">
             <img src="./media/nfx.png" alt="logo" class="lg:w-32 md:w-28 w-20" />
@@ -61,11 +61,50 @@
           </div>
         </div>
       </nav>
-      <div class="w-screen">
+      <div class="w-full">
         <div class="flex relative bg-cover bg-no-repeat aspect-[16/7]" style="background-image: url(./media/test.webp)">
           <div class="absolute bottom-0 w-full h-1/3 bg-gradient-to-b from-transparent to-gray-800"></div>
         </div>
       </div>
+      <div class="w-full min-h-[50px] relative">
+        <div class="grid auto-rows-fr grid-cols-1 gap-5 overflow-x-auto">
+          <div class="flex flex-row gap-3 min-h-[2.5rem] overflow-x-hidden pl-10 pr-10">
+            <div
+              class="flex bg-cover bg-no-repeat w-[341px] h-[192px] aspect-video rounded-md cursor-pointer"
+              style="background-image: url(./media/item_1.jpg)"
+            ></div>
+            <div
+              class="flex bg-cover bg-no-repeat w-[341px] h-[192px] aspect-video rounded-md cursor-pointer"
+              style="background-image: url(./media/item_2.jpg)"
+            ></div>
+            <div
+              class="flex bg-cover bg-no-repeat w-[341px] h-[192px] aspect-video rounded-md cursor-pointer"
+              style="background-image: url(./media/item_3.jpg)"
+            ></div>
+            <div
+              class="flex bg-cover bg-no-repeat w-[341px] h-[192px] aspect-video rounded-md cursor-pointer"
+              style="background-image: url(./media/item_4.jpg)"
+            ></div>
+            <div
+              class="flex bg-cover bg-no-repeat w-[341px] h-[192px] aspect-video rounded-md cursor-pointer"
+              style="background-image: url(./media/item_5.jpg)"
+            ></div>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('./libs/service.worker.js')
+          .then((reg) => {
+            console.log('SW registered with scope', reg.scope);
+          })
+          .catch((err) => console.log('SW registration failed', error));
+      }
+    </script>
+
+    <script src="./libs/data.js"></script>
   </body>
 </html>
